@@ -41,32 +41,18 @@ async function main(projectName, entryPoint) {
 		for (const element of queuePages.slice(0, 8)) {
 			console.log(element);
 		}
-		const pres = await fetch(
-			apiBase + projectName + "/" + encodeURIComponent(pageName),
-		);
+		const pres = await fetch(apiBase + projectName + "/" + encodeURIComponent(pageName));
 		const page = await pres.json();
 		try {
-			await fs.mkdir(
-				path.join(".", "cosense_modules", sanitizeFileName(pageName)),
-			);
+			await fs.mkdir(path.join(".", "cosense_modules", sanitizeFileName(pageName)));
 		} catch {}
 		await fs.writeFile(
-			path.join(
-				".",
-				"cosense_modules",
-				sanitizeFileName(pageName),
-				"page.json",
-			),
+			path.join(".", "cosense_modules", sanitizeFileName(pageName), "page.json"),
 			JSON.stringify(page),
 		);
 		const pagetext = page.lines.map((a) => a.text).join("\n");
 		await fs.writeFile(
-			path.join(
-				".",
-				"cosense_modules",
-				sanitizeFileName(pageName),
-				"page.txt",
-			),
+			path.join(".", "cosense_modules", sanitizeFileName(pageName), "page.txt"),
 			pagetext,
 		);
 		const pageparse = parser.parse(pagetext);
