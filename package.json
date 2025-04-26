@@ -1,6 +1,6 @@
 {
 	"name": "@bsahd/cosense-package-manager",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "a *package* resolver for cosense",
 	"homepage": "https://github.com/bsahd/cosense-package-manager#readme",
 	"bugs": {
