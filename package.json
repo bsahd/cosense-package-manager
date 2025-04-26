@@ -1,5 +1,5 @@
 {
-	"name": "cosense-package-manager",
+	"name": "@bsahd/cosense-package-manager",
 	"version": "0.1.0",
 	"description": "a *package* resolver for cosense",
 	"homepage": "https://github.com/bsahd/cosense-package-manager#readme",
@@ -21,5 +21,8 @@
 		"@progfay/scrapbox-parser": "^9.2.0",
 		"prettier": "^3.5.3"
 	},
-	"bin": "index.js"
+	"bin": "index.js",
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	}
 }
