@@ -21,7 +21,9 @@
 		"@progfay/scrapbox-parser": "^9.2.0",
 		"prettier": "^3.5.3"
 	},
-	"bin": "index.js",
+	"bin": {
+		"cosense-package-manager": "./index.js"
+	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
 	}
